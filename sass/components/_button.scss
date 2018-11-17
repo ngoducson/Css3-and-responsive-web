@@ -49,12 +49,22 @@
         }
     }
 
+    &--green {
+        background-color: $color1;
+        color: $color-white;
+        &::after {
+            background: $color1;
+        }
+    }
+
     &--animation {
         animation: moveInBottom 1s ease 0.7s;
         animation-fill-mode: backwards;
     }
 }
 
+
+// btn text
 .btn-text {
     &:link,
     &:visited {

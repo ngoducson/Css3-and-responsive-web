@@ -1,0 +1,106 @@
+.nav {
+    
+    &__check {
+        display: none;
+
+        &:checked ~ .nav__bg {
+            transform: scale(80);
+        }
+        &:checked ~ .nav__main {
+            width: 100%;
+            opacity: 1;
+        }
+        &:checked ~ .nav__button::after {
+            content: 'close';
+        }
+    }
+
+    &__button {
+        position: fixed;
+        width: 7rem;
+        height: 7rem;
+        top: 5rem;
+        right: 5rem;
+        background-color: $color-white;
+        border-radius: 50%;
+        z-index: 9000;
+        transition: 0.4s;
+        
+        &:hover {
+            cursor: pointer;
+            background-color: $color-black;
+            color: white;
+        }
+
+        &::after {
+            content: 'open';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+        }
+    }
+
+    &__bg {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 5.5rem;
+        right: 5.5rem;
+        background-image: radial-gradient(rgba($color1, 1), rgba($color1-dark, 1));
+        transition: transform 0.4s ease;
+        z-index: 6000;
+    }
+
+    &__main {
+        position: fixed;
+        width: 0;
+        height: 100vh;
+        z-index: 7000;
+        top: 0;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__item {
+        list-style: none;
+        margin-bottom: 1rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background-image: linear-gradient(120deg,transparent 0%, transparent 50%, $color-white 50%);
+            transition: 0.5s;
+            background-size: 240%;
+            color: $color-white;
+        }
+        
+
+        &:hover,
+        &:active {
+            background-position: 100%;
+            transform: translateX(-1rem);
+            color: $color-black;
+        }
+
+    }
+}

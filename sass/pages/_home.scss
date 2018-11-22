@@ -14,6 +14,10 @@
     & > * {
         transform: skewY(7deg)
     }
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-card {
@@ -56,6 +60,15 @@
         &__form {
             width: 50%;
             padding: 5rem;
+            @include respond(tab-port) {
+                width: 100%;
+            }
+        }
+
+        @include respond(tab-port) {
+            background-image: linear-gradient(120deg, rgba($color-white, 0.8) 0%,
+                                        rgba($color-white, 0.8) 100%),
+                                        url(../image/nat-10.jpg);
         }
     }
 }

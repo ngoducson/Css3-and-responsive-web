@@ -1,0 +1,80 @@
+.popup {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .9);
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+
+
+    &__box {
+        position: absolute;
+        width: 75%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-white;
+        display: table;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    &__left {
+        width: 33.3333333333%;
+        display: table-cell;
+        vertical-align: middle;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__right {
+        width: 66.666666667%;
+        display: table-cell;
+        vertical-align: top;
+        position: relative;
+        padding: 4rem 1rem;
+
+        .btn__close {
+            display: inline-block;
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            font-size: 2rem;
+            text-decoration: none;
+            color: $color1;
+            top: 1rem;
+            right: 1rem;
+        }
+    }
+
+
+
+    &__text {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        column-count: 2;
+        column-rule: 1px solid red;
+        column-gap: 4rem;
+        font-size: 1.4rem;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    &:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &:target &__box {
+        opacity: 1;
+    }
+}

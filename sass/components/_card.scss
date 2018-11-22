@@ -2,6 +2,9 @@
     height: 50rem;
     position: relative;
     perspective: 100rem;
+    @include respond(tab-port) {
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    }
 
     &:hover &__side--front {
         transform: rotateY(180deg);
@@ -143,5 +146,31 @@
         font-weight: 100;
         color: #fff;
         margin-bottom: 5rem;
+    }
+
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover: none)  {
+        height: auto;
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+           
+        &__side {
+            box-shadow: none;
+            position: relative;
+            height: auto;
+            border-radius: 3px;
+    
+            &--back {
+                transform: rotateY(0);
+                -webkit-clip-path: polygon(0 9%, 100% 0, 100% 100%, 0% 100%);
+                clip-path: polygon(0 9%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+    
+
+    
     }
 }
